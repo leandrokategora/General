@@ -7,7 +7,7 @@ def run():
     odd = list(filter(lambda x: x % 2 != 0, my_list))
     print("FILTER: ", odd)
     
-    #MAP sirve para "procesar" o potenciar los elementos del iterable y retornarlos dentro de un nuevo iterable
+    #MAP sirve para "procesar" los elementos del iterable segun un criterio y retornarlos dentro de un nuevo iterable
     squares = list(map(lambda x: x**2, my_list))
     print("MAP: ", squares)
 
