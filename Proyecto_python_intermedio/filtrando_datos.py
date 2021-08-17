@@ -79,10 +79,11 @@ def run():
     for worker in all_python_devs, all_platzi_worker:
         print(worker)
         
-    lista_1 = list(map(lambda worker["name"]: woker if worker["organization"] == "Platzi")
-    print(lista_1)
+    platzi_workers = list(filter(lambda worker: worker["organization"] == "Platzi", DATA))
+    
+    platzi_workers = list(map(lambda worker: worker["name"], platzi_workers))
 
+    print(platzi_workers)
 
 if __name__=='__main__':
     run()
-    
