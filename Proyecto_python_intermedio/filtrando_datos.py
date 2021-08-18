@@ -85,5 +85,7 @@ def run():
 
     print(platzi_workers)
 
+    #esta modificacion es solo para ver si puedo hacer un push desde la notebook sony
+
 if __name__=='__main__':
     run()
