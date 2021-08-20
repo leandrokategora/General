@@ -87,6 +87,8 @@ def run():
 
     #esta modificacion es solo para ver si puedo hacer un push desde la notebook sony
     #esta modificacion es solo para ver si puedo hacer un push desde la maquina del trabajo
+    #esta modificacion es solo para ver si puedo hacer un cambio desde github y bajarlo con pull
+    
     
 if __name__=='__main__':
     run()
