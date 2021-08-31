@@ -23,6 +23,7 @@ def write():
 def run():
     read()
     write()
+#necesito ver porque no sube esto al repositorio remoto
 
 
 
