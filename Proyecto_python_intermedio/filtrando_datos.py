@@ -88,8 +88,13 @@ def run():
     #esta modificacion es solo para ver si puedo hacer un push desde la notebook sony
     #esta modificacion es solo para ver si puedo hacer un push desde la maquina del trabajo
     #esta modificacion es solo para ver si puedo hacer un cambio desde github y bajarlo con pull
+<<<<<<< HEAD
     #esta modificacion es solo para confirmar que pude hacer todo lo anterior y bajarlo a la maquina notebook.
     
+=======
+    #esta modificacion es para ver si funciona mi llave SSH
+    #cool!!! parece que si funciono
+>>>>>>> 08eedc71cc07d32312bac4a4068c25f7465ead8b
     
 if __name__=='__main__':
     run()
