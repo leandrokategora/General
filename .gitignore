@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+./pipenv-2021.5.29
+./.mypy_cache
+
