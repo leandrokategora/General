@@ -1,0 +1,8 @@
+bash: list_and_dicts.py: command not found
+bash: list_and_dicts.py: command not found
+natural_nums - [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+integer_nums - [-1, -2, 0, 1, 2]
+floating_nums - [1.2, 2.5, 3.1, 4.6, 5.6]
+[curso_intermedio_python 98c18d7] cree un archivo como salida del resultado de ejecutar un scrpt de python, lo cree con list_and_dicts.py
+ 1 file changed, 5 insertions(+)
+ create mode 100644 Proyecto_python_intermedio/resultado.txt

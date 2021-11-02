@@ -27,8 +27,8 @@ def list_1():
 
     print(lista_de_palabras)
     
-def palabra(a):
-    a = 
+# def palabra(a):
+    # a = 
 
 
 def run():
