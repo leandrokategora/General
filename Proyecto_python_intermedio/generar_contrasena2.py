@@ -6,7 +6,6 @@ lower = 'abcdefghijklmnñopqrstuvwxyz'
 upper = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'
 numero = '1234567890'
 simbol = '@#+*^<>}{][-_$%&/)(?!'
-dir_pandas = 'C:/Users/Usuario/proyecto1/Proyecto_python_intermedio/{}'.format('contraseñas.csv')
 
 all_ = lower + upper + numero + simbol
 length = 16
@@ -25,14 +24,12 @@ dict_pass = {
     'Contraseña' :    [str(password)]
 }
 
+cuenta = plataforma + ": " + user + "; " + password
 
 df = pd.DataFrame(dict_pass)
 
-cuenta = plataforma + ": " + user + "; " + password
-
-pd.to_csv(dir_pandas, index=False)
-# with open('./contraseñas.csv', "r+", encoding="utf-8") as f:
-#     f.write(df)
+with open('./contraseñas.csv', "r+", encoding="utf-8") as f:
+    f.write(df)
 
 
 
