@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 ./pipenv-2021.5.29
 ./.mypy_cache
-
+/Proyecto_python_intermedio/Data/base_datos_2008.csv.bz2
+Proyecto_python_intermedio/Data/base_datos_2008.csv.bz2
