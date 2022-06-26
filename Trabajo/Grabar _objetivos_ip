@@ -1,0 +1,94 @@
+Sub Grabar()
+'copia el porcentaje cargado para cada vendedor en la hoja "PRINCIPAL" y lo graba en la hoja base objetivos, 
+'ese porcentaje multiplicado por la cartera correspondiente a ese periodo da el objetivo ip
+Control = Sheets("PRINCIPAL").Range("U1")
+INDICADOR = Sheets("PRINCIPAL").Range("D1")
+MSG = MsgBox("DESEA GRABAR LOS OBJETIVOS PARA" & " " & INDICADOR, vbYesNo, "ATENCION")
+If MSG <> 6 Then
+    Exit Sub
+Else
+    If Control = 1 Then
+        MSJE = MsgBox("YA SE GRABARON DATOS PARA ESTE INDICADOR")
+        Else
+            Sheets("PRINCIPAL").Select
+        If Range("S1").Value = 1 Then
+            MsgBox ("HAY CAMPOS VACIOS")
+        Else
+        
+        'Carga el dato del Distri
+            Sheets("PRINCIPAL").Select
+            Sheets("PRINCIPAL").Range("A4").Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.Copy
+            Sheets("Base Objetivos").Select
+            Ultimo = Range("A1").End(xlDown).Row + 1
+            Cells(Ultimo, 1).Select
+        Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+                :=False, Transpose:=False
+                     
+            
+            'Carga el dato del Vendedor
+            Sheets("PRINCIPAL").Select
+            Sheets("PRINCIPAL").Range("B4").Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.Copy
+            Sheets("Base Objetivos").Select
+            Ultimo = Range("B1").End(xlDown).Row + 1
+            Cells(Ultimo, 2).Select
+        Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+                :=False, Transpose:=False
+            
+            'Carga el dato del Periodo
+            Sheets("PRINCIPAL").Select
+            Sheets("PRINCIPAL").Range("O1").Select
+            Selection.Copy
+            Sheets("Base Objetivos").Select
+            Primero = Range("C1").End(xlDown).Row + 1
+            Ultimo = Range("B1").End(xlDown).Row
+            Range(Cells(Primero, 3), Cells(Ultimo, 3)).Select
+        Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+                :=False, Transpose:=False
+                
+            'Carga el Nombre del Indicador
+            Sheets("PRINCIPAL").Select
+            Sheets("PRINCIPAL").Range("P1").Select
+            Selection.Copy
+            Sheets("Base Objetivos").Select
+            Primero = Range("D1").End(xlDown).Row + 1
+            Ultimo = Range("B1").End(xlDown).Row
+            Range(Cells(Primero, 4), Cells(Ultimo, 4)).Select
+        Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+                :=False, Transpose:=False
+                
+            'Carga el Valor de Objetivo
+            Sheets("PRINCIPAL").Select
+            Sheets("PRINCIPAL").Range("R4").Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.Copy
+            Sheets("Base Objetivos").Select
+            Ultimo = Range("E1").End(xlDown).Row + 1
+            Cells(Ultimo, 5).Select
+        Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+                :=False, Transpose:=False
+                
+            'Extiende la Formula de Valor Unico
+            Sheets("Base Objetivos").Select
+            Range("F2").Select
+            Selection.Copy
+            Primero = Range("F1").End(xlDown).Row + 1
+            Ultimo = Range("B1").End(xlDown).Row
+            Range(Cells(Primero, 6), Cells(Ultimo, 6)).Select
+            Selection.PasteSpecial Paste:=xlPasteFormulas, Operation:=xlNone, SkipBlanks _
+                :=False, Transpose:=False
+                
+        'Borra los objetivos grabados
+            Sheets("PRINCIPAL").Select
+            Sheets("PRINCIPAL").Range("R4").Select
+            Range(Selection, Selection.End(xlDown)).Select
+            Selection.ClearContents
+            Range("D1").Select
+        End If
+    End If
+End If
+
+End Sub

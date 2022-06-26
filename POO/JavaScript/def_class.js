@@ -1,0 +1,3 @@
+Person.prototype.walk = function() {
+
+}

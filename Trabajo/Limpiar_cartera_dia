@@ -1,0 +1,108 @@
+' C = Range("A1").Value
+    
+'     Dim C As Integer
+
+'     Dim i As Integer
+    
+    
+'     For i = 1 To C
+    
+'     Range(Selection, Selection.End(xlDown)).Select
+'     Selection.FillDown
+'     Selection.End(xlDown).Select
+    
+'     Next i
+    
+
+Sub limpiar_cartera_por_dia()
+'
+' a ver si ahora si
+'
+
+'
+Dim i As Integer
+Dim c As Integer
+
+    Cells.Select
+    With Selection
+        .HorizontalAlignment = xlGeneral
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    With Selection
+        .HorizontalAlignment = xlGeneral
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    With Selection
+        .HorizontalAlignment = xlGeneral
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    With Selection
+        .HorizontalAlignment = xlGeneral
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Selection.UnMerge
+    Cells.EntireColumn.AutoFit
+    Range("A1").Select
+    ActiveCell.FormulaR1C1 = "=1199-(COUNTBLANK(R[1]C:R[1199]C))"
+    Range("A2").Select
+    c = Range("A1").Value
+    
+    For i = 1 To c
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.FillDown
+    Selection.End(xlDown).Select
+    Next i
+    '
+    ActiveCell.Offset(3, 2).Range("A1").Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Range("A20").Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Selection.AutoFilter
+    Selection.AutoFilter
+    ActiveSheet.Range("$A$1:$L$17").AutoFilter Field:=2, Criteria1:="=Totales" _
+        , Operator:=xlOr, Criteria2:="="
+    Rows("2:2").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Delete Shift:=xlUp
+    ActiveSheet.Range("$A$1:$L$9").AutoFilter Field:=2
+    ActiveCell.Columns("A:A").EntireColumn.Select
+    Columns("A:A").Select
+    Selection.Replace What:="Vendedor:", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+    Range("A1").Select
+    Range("A2").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Copy
+End Sub
