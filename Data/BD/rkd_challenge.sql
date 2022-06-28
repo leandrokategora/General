@@ -16,7 +16,9 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
+CREATE DATABASE IF NOT EXISTS rkd_challenge;
 
+USE rkd_challenge;
 --
 -- Base de datos: `rkd_challenge`
 --
@@ -28,8 +30,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `calendario` (
-  `date` date NOT NULL,
-  `año` int(11) NOT NULL
+  `date` datetime NOT NULL,
+  `año` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -39,8 +41,8 @@ CREATE TABLE `calendario` (
 --
 
 CREATE TABLE `plataforma` (
-  `plataforma_id` int(11) NOT NULL,
-  `plataforma` varchar(50) NOT NULL
+  `plataforma_id` bigint(20) NOT NULL,
+  `plataforma` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -50,19 +52,19 @@ CREATE TABLE `plataforma` (
 --
 
 CREATE TABLE `shows` (
-  `show_id` varchar(10) NOT NULL,
-  `type` varchar(15) DEFAULT NULL,
-  `title` varchar(100) NOT NULL,
-  `director` varchar(80) DEFAULT NULL,
-  `cast` varchar(200) DEFAULT NULL,
-  `country` varchar(50) DEFAULT NULL,
-  `date_added` date NOT NULL,
-  `release_year` int(11) DEFAULT NULL,
-  `rating` varchar(15) DEFAULT NULL,
-  `duration` varchar(50) DEFAULT NULL,
-  `listed_in` varchar(150) DEFAULT NULL,
-  `description` varchar(250) DEFAULT NULL,
-  `plataforma_id` int(11) NOT NULL
+  `show_id` text(10) DEFAULT NULL,
+  `type` text DEFAULT NULL,
+  `title` text DEFAULT NULL,
+  `director` text DEFAULT NULL,
+  `cast` text DEFAULT NULL,
+  `country` text DEFAULT NULL,
+  `date_added` datetime DEFAULT NULL,
+  `release_year` text DEFAULT NULL,
+  `rating` text DEFAULT NULL,
+  `duration` text DEFAULT NULL,
+  `listed_in` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `plataforma_id` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -83,9 +85,9 @@ ALTER TABLE `plataforma`
 
 --
 -- Indices de la tabla `shows`
---
+--   ADD PRIMARY KEY (`show_id`),
 ALTER TABLE `shows`
-  ADD PRIMARY KEY (`show_id`),
+
   ADD KEY `plataforma_id` (`plataforma_id`),
   ADD KEY `date_added` (`date_added`);
 
@@ -97,7 +99,7 @@ ALTER TABLE `shows`
 -- AUTO_INCREMENT de la tabla `plataforma`
 --
 ALTER TABLE `plataforma`
-  MODIFY `plataforma_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `plataforma_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
