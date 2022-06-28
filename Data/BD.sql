@@ -1,7 +1,9 @@
 
-CREATE DATABASE rkd_challenge;
+CREATE DATABASE IF NOT EXISTS rkd_challenge;
 
-CREATE TABLE plataforma(
+USE rkd_challenge;
+
+CREATE TABLE IF NOT EXISTS plataforma(
                         plataforma_id int not null auto_increment,
                         plataforma varchar(50) not null, 
                         primary key (plataforma_id)
@@ -10,7 +12,7 @@ CREATE TABLE plataforma(
 
 CREATE TABLE calendario (
                         date date not null,
-                         año int not null,
+                        año int not null,
                         primary key (date)
                         );
 
