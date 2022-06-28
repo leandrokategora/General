@@ -52,6 +52,7 @@ CREATE TABLE `plataforma` (
 --
 
 CREATE TABLE `shows` (
+  `id` int not null,
   `show_id` text(10) DEFAULT NULL,
   `type` text DEFAULT NULL,
   `title` text DEFAULT NULL,
@@ -87,11 +88,14 @@ ALTER TABLE `plataforma`
 -- Indices de la tabla `shows`
 --   ADD PRIMARY KEY (`show_id`),
 ALTER TABLE `shows`
-
-  ADD KEY `plataforma_id` (`plataforma_id`),
-  ADD KEY `date_added` (`date_added`);
+  ADD PRIMARY KEY (`id`);
+  -- ADD KEY `plataforma_id` (`plataforma_id`),
+  -- ADD KEY `date_added` (`date_added`);
 
 --
+ALTER TABLE `shows`
+  MODIFY `id` int(20)  AUTO_INCREMENT;
+
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
