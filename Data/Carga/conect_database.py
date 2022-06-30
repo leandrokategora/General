@@ -11,3 +11,4 @@ connection_string = (
 )
 params = urllib.parse.quote_plus(connection_string)
 engine = sa.create_engine("mysql+pyodbc:///?odbc_connect={}".format(params))
+print("mysql+pyodbc:///?odbc_connect={}".format(params))
