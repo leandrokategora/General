@@ -1,0 +1,3 @@
+pip intall pyinstaller
+pyistaller --windowed --onefile --icon=./path archivo.py
+
